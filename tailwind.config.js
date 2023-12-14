@@ -12,6 +12,9 @@ export default {
         placeholderColor: "#C4C4C4",
         higherSecondaryColor: "#6D6D6D",
         convBorderColor: "#F0F0F0",
+        fbColor: "#1877F2",
+        inColor: "#0077b5",
+        instColor: "#fccc63",
       },
       // Color End
 
