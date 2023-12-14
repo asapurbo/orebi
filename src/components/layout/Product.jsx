@@ -15,11 +15,11 @@ const Product = () => {
                     <Image src={cardxa} className='w-full cursor-pointer'/>
                 </div>
 
-                <Flex className='flex-col gap-y-10'>
-                    <div className='w-780 h-370'>
+                <Flex className='flex-col gap-y-10 w-780 h-780'>
+                    <div>
                         <Image src={cardxb} className='w-full cursor-pointer'/>
                     </div>
-                    <div className='w-780 h-370'>
+                    <div>
                        <Image src={cardxc} className='w-full cursor-pointer'/>
                     </div>
                 </Flex>
