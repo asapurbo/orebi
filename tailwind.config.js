@@ -15,6 +15,10 @@ export default {
         fbColor: "#1877F2",
         inColor: "#0077b5",
         instColor: "#fccc63",
+        ctgyColor: "rgba(255, 255, 255, 0.70)",
+        ctgyBdrColor: "#2D2D2D",
+        userBgColor: "#2B2B2B",
+        cartBgColor: "#F0F0F0",
       },
       // Color End
 
@@ -42,14 +46,18 @@ export default {
         140: "140px",
         170: "170px",
         921: "921px",
+        360: "360px",
       },
       // Spacing End
 
       // FontSize Start
       fontSize: {
         39: '39px',
-      }
+      },
       // FontSize End
+      fontWeight: {
+        Bold: '700 !important',
+      }
     },
   },
   plugins: [],
