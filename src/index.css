@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+form label {
+  position: relative;
+  display: inline-block;
+}
+form .sub label::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border: 1px solid #767676;
+  position: absolute;
+  left: -10px;
+  top: 4px;
+}
+form .sub input[type="radio"] {
+  appearance: none;
+}
+form .sub input[type="radio"]:checked + label::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  left: -8px;
+  top: 6px;
+  background: #767676;
+}

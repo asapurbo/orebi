@@ -13,14 +13,12 @@ const Header = () => {
             <Logo />
           </div>
           <div className="w-[95%]">
-            <ul>
-              <Flex className={"justify-center gap-x-10"}>
-                <List text="Home" target="_blank" href="https://tailwindcss.com/docs/padding" />
+            <ul className="flex justify-center gap-x-10">
+                <List text="Home" target="_blank" href="/" />
                 <List text="Shop" target="_blank" href="#" />
                 <List text="About" target="_blank" href="#" />
                 <List text="Contacts" target="_blank" href="#" />
                 <List text="Journal" target="_blank" href="#" />
-              </Flex>
             </ul>
           </div>
         </Flex>

@@ -19,6 +19,7 @@ export default {
         ctgyBdrColor: "#2D2D2D",
         userBgColor: "#2B2B2B",
         cartBgColor: "#F0F0F0",
+        SnColor: "#6D6D60",
       },
       // Color End
 
@@ -47,17 +48,35 @@ export default {
         170: "170px",
         921: "921px",
         360: "360px",
+        p124: "124px",
+        644: "644px",
+        b62: "62px",
+        t57: "57px",
+        b69: "69px",
+        b42: "42px",
+        w437: "437px",
+        y16: "16px",
+        l77: "77px",
+        r83: "83px",
       },
       // Spacing End
 
       // FontSize Start
       fontSize: {
-        39: '39px',
+        39: "39px",
+        49: "49px",
+        11: "11px",
       },
       // FontSize End
       fontWeight: {
-        Bold: '700 !important',
-      }
+        Bold: "700 !important",
+      },
+      // Line Height Start
+      lineHeight: {
+        30: "30px",
+        l23: "23px",
+      },
+      // Line Height End
     },
   },
   plugins: [],
