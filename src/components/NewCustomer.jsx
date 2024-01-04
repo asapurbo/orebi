@@ -12,7 +12,7 @@ const NewCustomer = () => {
       let data = await axios.get("https://restcountries.com/v3.1/all");
       setAll(data.data);
     }
-    all();
+    all()
   }, []);
 
   return (
