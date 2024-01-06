@@ -29,6 +29,12 @@ const Category = () => {
       dropStyle.display = "block";
     }
   };
+  // Cancel Start
+  let cancel = () => {
+    const dropStyle = dropRefTwo.current.style;
+    dropStyle.display = "none";
+  };
+  // Cancel End
 
   let handleClickOutSite = (event, dropRefCmn, btnRefCmn) => {
     if (
@@ -198,7 +204,12 @@ const Category = () => {
                           />
                         </div>
                       </Flex>
-                      <FaXmark />
+                      <span
+                        onClick={cancel}
+                        className="w-12 h-12 hover:bg-white cursor-pointer duration-300 flex justify-center items-center rounded-full"
+                      >
+                        <FaXmark />
+                      </span>
                     </Flex>
                   </div>
 
