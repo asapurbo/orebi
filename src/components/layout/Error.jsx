@@ -32,7 +32,7 @@ const Error = () => {
             </div>
           </div>
          
-          <div className="w-s200 text-center bg-primaryColor mt-16">
+          <div className="w-s200 text-center bg-primaryColor mt-s60">
             <Link to="/" className="py-4 block text-white font-DM text-sm font-bold">Back to Home</Link>
           </div>
         </div>
