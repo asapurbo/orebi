@@ -11,15 +11,15 @@ import Button from './Button'
 
 const Card = ({src,bmtxt,price,alt,target,hrefHeart,hrefRotate,hrefCart,btn}) => {
   return (
-     <div className='w-[370px]'>
-         <div className='w-[370px] h-[370px] relative group'>
+     <div className='w-370'>
+         <div className='w-370 h-370 relative group'>
            <Image src={src} alt={alt}/>
             <div className='inline-block absolute top-5 left-7'>
               <Button text={btn}/>       
             </div>
-            <div className='w-[0px] h-[156px] duration-700 truncate bg-white absolute bottom-0 group-hover:w-[370px]'>
+            <div className='w-370 h-0 duration-500 truncate bg-white absolute bottom-0 group-hover:h-s156'>
                 <a href={hrefHeart} target={target}>
-                 <Flex className="items-center gap-x-[15px] pt-6 pr-6 justify-end">
+                 <Flex className="items-center gap-x-s15 pt-6 pr-6 justify-end">
                     <Heading text="Add to Wish List" as="h4" className="text-secondaryColor font-DM text-base font-normal"/>
                     <FaHeart />
                  </Flex>

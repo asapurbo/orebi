@@ -31,7 +31,7 @@ const SignUp = () => {
             />
           </div>
         </div>
-        <form action="">
+        <form action="#">
           <div className="border-b border-solid border-convBorderColor pb-b62">
             <PersonalDetails />
           </div>
@@ -58,13 +58,23 @@ const SignUp = () => {
               as="h3"
               className=" text-secondaryColor font-DM text-sm inline-block font-normal"
             />
-            <div className="sub cursor-pointer"> 
-               <input type="radio" id="yes" name="subscribe" />
-               <label htmlFor="yes" className="pl-4 text-secondaryColor font-DM text-sm inline-block font-normal">Yes</label>
+            <div className="sub cursor-pointer">
+              <input type="radio" id="yes" name="subscribe" />
+              <label
+                htmlFor="yes"
+                className="pl-4 text-secondaryColor font-DM text-sm inline-block font-normal"
+              >
+                Yes
+              </label>
             </div>
-            <div className="sub"> 
-               <input type="radio" id="no" name="subscribe" />
-               <label htmlFor="no" className="pl-4 text-secondaryColor font-DM text-sm inline-block font-normal">No</label>
+            <div className="sub">
+              <input type="radio" id="no" name="subscribe" />
+              <label
+                htmlFor="no"
+                className="pl-4 text-secondaryColor font-DM text-sm inline-block font-normal"
+              >
+                No
+              </label>
             </div>
           </Flex>
           <div className="mt-7">

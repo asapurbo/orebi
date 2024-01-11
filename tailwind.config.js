@@ -58,14 +58,32 @@ export default {
         y16: "16px",
         l77: "77px",
         r83: "83px",
+        130: "130px",
+        372: "372px",
+        s11: "11px",
+        53: "53px",
+        249: "249px",
+        s6s1700: "60px",
+        s780: "780px",
+        s9: "9px",
+        s30: "30px",
+        s506: "506px",
+        s200: "200px",
+        s170: "170px",
+        s50: "50px",
+        s156: "156px",
+        s15: "15px",
+
       },
       // Spacing End
 
       // FontSize Start
       fontSize: {
-        39: "39px",
+        39: "39px !important",
         49: "49px",
         11: "11px",
+        25: "25px !important",
+        f200: "200px !important",
       },
       // FontSize End
       fontWeight: {
@@ -75,6 +93,7 @@ export default {
       lineHeight: {
         30: "30px",
         l23: "23px",
+        l52: "52px",
       },
       // Line Height End
     },

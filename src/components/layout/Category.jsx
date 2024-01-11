@@ -5,11 +5,11 @@ import List from "../List";
 import Bar from "../icons/Bar";
 import Paragraph from "../Paragraph";
 import Heading from "../Heading";
-import Button from "../Button";
 import Image from "../Image";
 import cardimgx from "../../assets/cardimgx.png";
 import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Category = () => {
   // Shop by Category Part Start
@@ -156,20 +156,23 @@ const Category = () => {
 
                 <div
                   ref={dropRefOne}
-                  className="w-[200px] hidden bg-white left-[-170px] top-8 absolute border border-solid border-cartBgColor"
+                  className="w-s200 hidden bg-white -left-s170 top-8 absolute border border-solid border-cartBgColor"
                 >
-                  <ul className="text-center">
-                    <List
-                      text="Login"
-                      href="/login"
-                      className="py-4 px-[50px] bg-userBgColor font-Bold  text-white hover:text-white"
-                    />
-                    <List
-                      text="Sign Up"
-                      href="/signup"
-                      className="py-4 px-[50px] hover:font-normal text-black"
-                    />
-                  </ul>
+                  <div className="text-center">
+                    <Link
+                      className="py-4 block px-s50 bg-white text-primaryColor font-Bold hover:text-white hover:bg-primaryColor duration-300"
+                      to="/login"
+                    >
+                      Login
+                    </Link>
+
+                    <Link
+                      className="py-4 block px-s50 bg-white text-primaryColor font-Bold hover:text-white hover:bg-primaryColor duration-300 border-t border-solid border-cartBgColor"
+                      to="/signup"
+                    >
+                      Sign Up
+                    </Link>
+                  </div>
                 </div>
               </div>
 
@@ -225,12 +228,15 @@ const Category = () => {
                         className="text-primaryColor font-DM text-base font-bold"
                       />
                     </Flex>
+
                     <Flex className="gap-x-5 mt-3">
-                      <Button
-                        text="View Cart"
-                        className="bg-white text-primaryColor border border-solid border-userBgColor py-4 px-10"
-                      />
-                      <Button text="Checkout" className="py-4 px-10" />
+                      <button className="bg-white text-primaryColor font-DM text-sm font-bold  border border-solid border-userBgColor hover:bg-primaryColor duration-300 hover:text-white py-4 px-10">
+                        View Cart
+                      </button>
+
+                      <button className="bg-white text-primaryColor font-DM text-sm font-bold  border border-solid border-userBgColor hover:bg-primaryColor duration-300 hover:text-white py-4 px-10">
+                        Checkout
+                      </button>
                     </Flex>
                   </div>
                 </div>
