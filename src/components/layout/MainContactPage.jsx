@@ -5,6 +5,7 @@ import Flex from "../Flex";
 import Label from "../Label";
 import SignUpHeading from "../SignUpHeading";
 import Button from "../Button";
+import LocetionCard from "./LocetionCard";
 
 const MainContactPage = () => {
   return (
@@ -50,18 +51,30 @@ const MainContactPage = () => {
                   type="email"
                   className="focus:outline-transparent placeholder:text-secondaryColor placeholder:font-DM placeholder:text-sm placeholder:font-normal w-full pb-4 border-b border-solid border-convBorderColor"
                   placeholder="Your message here"
-                >
-                </textarea>
+                ></textarea>
               </div>
-             
             </div>
           </div>
           <div className="mt-7">
             <Button text="Post" className="py-y16 pl-l77 pr-r83" />
           </div>
         </form>
-        <div>
-        
+
+        <div className="mt-36 relative">
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20229.89808322628!2d90.35871655016996!3d22.692362873064106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37553407fbece487%3A0x5d069b9599d4414a!2z4Kas4Kaw4Ka_4Ka24Ka-4Kay!5e0!3m2!1sbn!2sbd!4v1704996797674!5m2!1sbn!2sbd"
+              width="100%"
+              height="672px"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              className="mb-36 mx-4 w-full"
+            ></iframe>
+          </div>
+          <div className="absolute top-2/4 -translate-y-2/4 left-20">
+            <LocetionCard/>
+          </div>
         </div>
       </Container>
     </section>

@@ -10,10 +10,10 @@ const GridBar = () => {
       <div>
         <Flex className="gap-x-5">
           <div>
-            <Grid1 />
+            <Grid1 className="cursor-pointer" />
           </div>
           <div>
-            <Grid2 />
+            <Grid2 className="cursor-pointer" />
           </div>
         </Flex>
       </div>

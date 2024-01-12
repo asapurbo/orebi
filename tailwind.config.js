@@ -73,6 +73,7 @@ export default {
         s50: "50px",
         s156: "156px",
         s15: "15px",
+        s451: "451px",
 
       },
       // Spacing End
@@ -84,6 +85,7 @@ export default {
         11: "11px",
         25: "25px !important",
         f200: "200px !important",
+        f15: "15px !important",
       },
       // FontSize End
       fontWeight: {
