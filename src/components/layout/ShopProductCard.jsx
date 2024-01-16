@@ -1,5 +1,4 @@
 import Card from "../Card";
-import Flex from "../Flex";
 import productya from "../../assets/productya.png";
 import productyb from "../../assets/productyb.png";
 import productyc from "../../assets/productyc.png";

@@ -22,11 +22,6 @@ const Shop = () => {
       shopOneRef.current.classList.add("items-center");
     };
     gridTwoRef.current.addEventListener("click", handelClick);
-
-    return () => {
-      shopOneRef.current.classList.remove("flex-col");
-      shopOneRef.current.classList.remove("items-center");
-    };
   }, []);
 
   useEffect(() => {
@@ -35,11 +30,6 @@ const Shop = () => {
       shopOneRef.current.classList.remove("items-center");
     };
     gridOneRef.current.addEventListener("click", handelClick);
-
-    return () => {
-      shopOneRef.current.classList.add("flex-col");
-      shopOneRef.current.classList.add("items-center");
-    };
   }, []);
 
   return (
