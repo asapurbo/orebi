@@ -32,8 +32,10 @@ const Shop = () => {
     gridOneRef.current.addEventListener("click", handelClick);
   }, []);
 
+  const bread = window.location.pathname.replace("/", "");
+
   return (
-    <section className="pt-p124 pb-140 ">
+    <section className="pt-p124 pb-140">
       <Container>
         <div className="mb-130">
           <Heading
@@ -41,10 +43,10 @@ const Shop = () => {
             as="h3"
             className="text-primaryColor font-DM text-49 font-bold"
           />
-          <Flex className="items-center text-SnColor font-DM text-xs font-normal gap-x-2 pt-3">
+          <Flex className="items-center capitalize text-SnColor font-DM text-xs font-normal gap-x-2 pt-3">
             <Heading text="Home" as="h4" />
             <FaAngleRight />
-            <Heading text="Products" as="h4" />
+            <Heading text={bread} as="h4" />
           </Flex>
         </div>
 
