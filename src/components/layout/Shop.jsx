@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Container from "../Container";
 import Heading from "../Heading";
 import Flex from "../Flex";
@@ -11,10 +11,39 @@ import GridBar from "./GridBar";
 import ShopProductCard from "./ShopProductCard";
 import PageButton from "./PageButton";
 
-
 const Shop = () => {
+  const gridOneRef = useRef(null);
+  const gridTwoRef = useRef(null);
+  const shopOneRef = useRef(null);
+
+  useEffect(() => {
+    const handelClick = () => {
+      shopOneRef.current.classList.add("flex-col");
+      shopOneRef.current.classList.add("items-center");
+    };
+    gridTwoRef.current.addEventListener("click", handelClick);
+
+    return () => {
+      shopOneRef.current.classList.remove("flex-col");
+      shopOneRef.current.classList.remove("items-center");
+    };
+  }, []);
+
+  useEffect(() => {
+    const handelClick = () => {
+      shopOneRef.current.classList.remove("flex-col");
+      shopOneRef.current.classList.remove("items-center");
+    };
+    gridOneRef.current.addEventListener("click", handelClick);
+
+    return () => {
+      shopOneRef.current.classList.add("flex-col");
+      shopOneRef.current.classList.add("items-center");
+    };
+  }, []);
+
   return (
-    <section className="pt-p124 pb-140">
+    <section className="pt-p124 pb-140 ">
       <Container>
         <div className="mb-130">
           <Heading
@@ -32,15 +61,15 @@ const Shop = () => {
         <Flex className="gap-x-8">
           <div className="w-372">
             <CategoryList />
-            <ColorList/>
-            <BrandList/>
-            <PriceList/>
+            <ColorList />
+            <BrandList />
+            <PriceList />
           </div>
 
           <div className="w-full">
-             <GridBar/>
-             <ShopProductCard/>
-             <PageButton/>
+            <GridBar refOne={gridOneRef} refTwo={gridTwoRef} />
+            <ShopProductCard refThree={shopOneRef} />
+            <PageButton />
           </div>
         </Flex>
       </Container>

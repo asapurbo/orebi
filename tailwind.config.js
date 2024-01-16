@@ -74,6 +74,9 @@ export default {
         s156: "156px",
         s15: "15px",
         s451: "451px",
+        s354: "354px",
+        s0 : "0px !important",
+        auto: 'auto !important'
 
       },
       // Spacing End
@@ -98,6 +101,9 @@ export default {
         l52: "52px",
       },
       // Line Height End
+      rotate: {
+        225: '225deg',
+      }
     },
   },
   plugins: [],

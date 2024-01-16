@@ -3,16 +3,17 @@ import ShopByHeading from "../ShopByHeading";
 import Grid1 from "../icons/Grid1";
 import Grid2 from "../icons/Grid2";
 import { FaCaretDown } from "react-icons/fa";
+import { forwardRef } from "react";
 
-const GridBar = () => {
+const GridBar = ({ refOne, refTwo }) => {
   return (
     <Flex className="justify-between">
       <div>
         <Flex className="gap-x-5">
-          <div>
+          <div ref={refOne}>
             <Grid1 className="cursor-pointer" />
           </div>
-          <div>
+          <div ref={refTwo}>
             <Grid2 className="cursor-pointer" />
           </div>
         </Flex>
@@ -59,5 +60,6 @@ const GridBar = () => {
     </Flex>
   );
 };
+const ForwardedGridBar = forwardRef(GridBar);
 
-export default GridBar;
+export default ForwardedGridBar;

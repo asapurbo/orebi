@@ -9,11 +9,16 @@ import productxi from '../../assets/productxi.png'
 import productxj from '../../assets/productxj.png'
 import productxk from '../../assets/productxk.png'
 import productxl from '../../assets/productxl.png'
+import { forwardRef } from "react";
 
-const ShopProductCard = () => {
+
+
+
+
+const ShopProductCard = ({refThree}) => {
   return (
     <div className="mt-s60">
-      <Flex className="flex-wrap justify-between gap-y-12">
+      <div ref={refThree} className="flex flex-wrap justify-between gap-y-12">
         <Card
           src={productya}
           bmtxt="Basic Crew Neck Tee"
@@ -144,9 +149,12 @@ const ShopProductCard = () => {
           target="_blank"
           btn="New"
         />
-      </Flex>
+      </div>
     </div>
   );
 };
 
-export default ShopProductCard;
+const forwardShopProductCard = forwardRef(ShopProductCard)
+
+
+export default forwardShopProductCard;

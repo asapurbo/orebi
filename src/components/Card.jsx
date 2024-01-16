@@ -11,9 +11,9 @@ import Button from './Button'
 
 const Card = ({src,bmtxt,price,alt,target,hrefHeart,hrefRotate,hrefCart,btn}) => {
   return (
-     <div className='w-370'>
-         <div className='w-370 h-370 relative group'>
-           <Image src={src} alt={alt}/>
+     <div className={`w-370`}>
+         <div className={`w-370 h-370 relative group`}>
+           <Image src={src} alt={alt} className="w-full"/>
             <div className='inline-block absolute top-5 left-7'>
               <Button text={btn}/>       
             </div>
