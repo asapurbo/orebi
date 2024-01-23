@@ -13,7 +13,7 @@ const NewProduct = () => {
     <section className='pb-118'>
         <Container>
            <Heading text="New Arrivals" as="h3" className="text-primaryColor font-DM text-39 font-bold  pb-12"/>
-           <Flex className="justify-between">
+           <Flex className="gap-x-10">
              <Card src={productya} bmtxt="Basic Crew Neck Tee" price="$44.00" hrefHeart="#" hrefRotate="#" hrefCart="#" target="_blank" btn="New" />
 
              <Card src={productyb} bmtxt="Basic Crew Neck Tee" price="$50.00" hrefHeart="#" hrefRotate="#" hrefCart="#" target="_blank" btn="New" />

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Container from "../Container";
 import Heading from "../Heading";
 import Flex from "../Flex";
@@ -15,11 +15,13 @@ const Shop = () => {
   const gridOneRef = useRef(null);
   const gridTwoRef = useRef(null);
   const shopOneRef = useRef(null);
-
+  const cardRef = useRef(null);
+  
   useEffect(() => {
     const handelClick = () => {
       shopOneRef.current.classList.add("flex-col");
       shopOneRef.current.classList.add("items-center");
+      cardRef.current.classList.add("w-ws70");
     };
     gridTwoRef.current.addEventListener("click", handelClick);
   }, []);

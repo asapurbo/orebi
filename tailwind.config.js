@@ -76,7 +76,8 @@ export default {
         s451: "451px",
         s354: "354px",
         s0 : "0px !important",
-        auto: 'auto !important'
+        auto: 'auto !important',
+        ws70: '70% !important'
 
       },
       // Spacing End

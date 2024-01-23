@@ -15,9 +15,10 @@ import { forwardRef } from "react";
 
 
 const ShopProductCard = ({refThree}) => {
+
   return (
-    <div className="mt-s60">
-      <div ref={refThree} className="flex flex-wrap justify-between gap-y-12">
+    <div className="mt-s60 ">
+      <div ref={refThree} className="flex w-full flex-wrap justify-between gap-y-130">
         <Card
           src={productya}
           bmtxt="Basic Crew Neck Tee"

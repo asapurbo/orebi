@@ -1,6 +1,4 @@
-import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
 import SignUpPages from "./pages/SignUpPages.jsx";
@@ -11,30 +9,54 @@ import AboutPage from "./pages/AboutPage.jsx";
 import ContactsPage from "./pages/ContactsPage.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 
-const Root = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={<RootLayout />}
-        >
-          <Route path="/" element={<App />} />
-          <Route path="/signup" element={<SignUpPages />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/shop" element={<ShopPage/>} />
-          <Route path="/about" element={<AboutPage/>} />
-          <Route path="/contacts" element={<ContactsPage/>} />
-          <Route path="/:id" element={<ErrorPage/>} />
-        </Route>
-      </Routes>
-    </Router>
-  );
-};
+import store from "../src/components/store.js";
+import { Provider } from "react-redux";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Root />
-  </React.StrictMode>,
-  document.getElementById("root")
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+
+
+const router = createBrowserRouter([
+  {
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <App />,
+      },
+      {
+        path: "/signup",
+        element: <SignUpPages />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "/shop",
+        element: <ShopPage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      {
+        path: "/contacts",
+        element: <ContactsPage />,
+      },
+      {
+        path: "/:id",
+        element: <ErrorPage />,
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );

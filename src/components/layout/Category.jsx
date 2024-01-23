@@ -1,4 +1,3 @@
-import React, { useEffect, useRef, useState } from "react";
 import Container from "../Container";
 import Flex from "../Flex";
 import List from "../List";
@@ -10,65 +9,24 @@ import cardimgx from "../../assets/cardimgx.png";
 import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { decrement } from "../Slice/counterSlice";
+import useClick from "../hook/useClick";
+
 
 const Category = () => {
-  // Shop by Category Part Start
-  const dropRef = useRef(null);
-  const btnRef = useRef(null);
-  const dropRefOne = useRef(null);
-  const btnRefOne = useRef(null);
-  const dropRefTwo = useRef(null);
-  const btnRefTwo = useRef(null);
+  const {handelClick: handleClick, commonOneRef: dropRef, commonTwoRef: btnRef  } = useClick()
 
-  let handleClick = (dropRefCmn, btnRefCmn) => {
-    const dropStyle = dropRefCmn.current.style;
+  const {handelClick: handleClickTwo, commonOneRef: dropRefOne, commonTwoRef: btnRefOne  } = useClick()
 
-    if (dropStyle.display === "block") {
-      dropStyle.display = "none";
-    } else {
-      dropStyle.display = "block";
-    }
-  };
-  // Cancel Start
-  let cancel = () => {
-    const dropStyle = dropRefTwo.current.style;
-    dropStyle.display = "none";
-  };
-  // Cancel End
+  const {handelClick: handleClickThree, commonOneRef: dropRefTwo, commonTwoRef: btnRefTwo  } = useClick()
 
-  let handleClickOutSite = (event, dropRefCmn, btnRefCmn) => {
-    if (
-      dropRefCmn.current &&
-      !dropRefCmn.current.contains(event.target) &&
-      !btnRefCmn.current.contains(event.target)
-    ) {
-      dropRefCmn.current.style.display = "none";
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", (event) => {
-      handleClickOutSite(event, dropRef, btnRef);
-    });
-    document.addEventListener("click", (event) => {
-      handleClickOutSite(event, dropRefOne, btnRefOne);
-    });
-    document.addEventListener("click", (event) => {
-      handleClickOutSite(event, dropRefTwo, btnRefTwo);
-    });
-    return () => {
-      document.removeEventListener("click", (event) => {
-        handleClickOutSite(event, dropRef, btnRef);
-      });
-      document.removeEventListener("click", (event) => {
-        handleClickOutSite(event, dropRefOne, btnRefOne);
-      });
-      document.removeEventListener("click", (event) => {
-        handleClickOutSite(event, dropRefTwo, btnRefTwo);
-      });
-    };
-  }, []);
-  // Shop by Category Part End
+  // redux code 
+   let counter = useSelector((state) => {
+    return state.count.value
+   })
+   let dispatch = useDispatch()
+  // redux code 
 
   return (
     <section className="py-10 bg-categoryBgColor border-t border-b border-solid border-borderColor">
@@ -78,7 +36,7 @@ const Category = () => {
             <Flex className="gap-x-3 items-center">
               <div
                 onClick={() => {
-                  handleClick(dropRef, btnRef);
+                  handleClick();
                 }}
                 ref={btnRef}
               >
@@ -144,7 +102,7 @@ const Category = () => {
               <div className="relative">
                 <div
                   onClick={() => {
-                    handleClick(dropRefOne, btnRefOne);
+                    handleClickTwo();
                   }}
                   ref={btnRefOne}
                 >
@@ -179,10 +137,14 @@ const Category = () => {
               <div className="relative">
                 <div
                   onClick={() => {
-                    handleClick(dropRefTwo, btnRefTwo);
+                    handleClickThree();
                   }}
                   ref={btnRefTwo}
+                  className="flex relative"
                 >
+                  <div className="absolute -top-4 -right-4 flex items-center justify-center w-5 h-5 rounded-full bg-primaryColor">
+                    <p className="  text-white font-DM text-xs font-bold">{counter}</p>
+                  </div>
                   <FaShoppingCart className="cursor-pointer" />
                 </div>
 
@@ -208,8 +170,8 @@ const Category = () => {
                         </div>
                       </Flex>
                       <span
-                        onClick={cancel}
                         className="w-12 h-12 hover:bg-white cursor-pointer duration-300 flex justify-center items-center rounded-full"
+                        onClick={() => {dispatch(decrement())}}
                       >
                         <FaXmark />
                       </span>

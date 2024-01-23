@@ -1,10 +1,8 @@
-import React from 'react'
-import MainContactPage from '../components/layout/MainContactPage'
+import React from "react";
+import MainContactPage from "../components/layout/MainContactPage";
 
 const ContactsPage = () => {
-  return (
-    <MainContactPage/>
-  )
-}
+  return <MainContactPage />;
+};
 
-export default ContactsPage
+export default ContactsPage;
