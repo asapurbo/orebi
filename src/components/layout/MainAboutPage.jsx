@@ -7,9 +7,26 @@ import AboutItemCard from "./AboutItemCard";
 import productcb from "../../assets/productcb.png";
 import productyc from "../../assets/productyc.png";
 import AboutTextCard from "../AboutTextCard";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import HeaderData from "../data/HeaderData";
 
 const MainAboutPage = () => {
+  const data = useSelector((state) => {
+    return state.bread.currentName;
+  });
+
+  console.log(data);
+  
+  let link = data.toLowerCase();
+  if (link === "home") {
+    link = link.replace("home", "");
+  } else if(link === "sing up") {
+    link = link.replace("sing up", "signup")
+  }
+
   const bread = window.location.pathname.replace("/", "");
+  const {haendleDispatch: dataHeadle} = HeaderData()
   return (
     <section className="pt-p124 pb-140">
       <Container>
@@ -20,7 +37,7 @@ const MainAboutPage = () => {
             className="text-primaryColor font-DM text-49 font-bold"
           />
           <Flex className="items-center text-SnColor capitalize font-DM text-xs font-normal gap-x-2 pt-3">
-            <Heading text="Home" as="h4" />
+            <Link onClick={() => { return dataHeadle(data) }} to={`/${link}`}>{data}</Link>
             <FaAngleRight />
             <Heading text={bread} as="h4" />
           </Flex>

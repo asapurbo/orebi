@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement } from "../Slice/counterSlice";
 import useClick from "../hook/useClick";
+import HeaderData from "../data/HeaderData";
 
 
 const Category = () => {
@@ -27,6 +28,9 @@ const Category = () => {
    })
    let dispatch = useDispatch()
   // redux code 
+
+  let {haendleDispatch: handelClick} = HeaderData()
+
 
   return (
     <section className="py-10 bg-categoryBgColor border-t border-b border-solid border-borderColor">
@@ -120,6 +124,9 @@ const Category = () => {
                     <Link
                       className="py-4 block px-s50 bg-white text-primaryColor font-Bold hover:text-white hover:bg-primaryColor duration-300"
                       to="/login"
+                      onClick={() => {
+                        return handelClick("Login")
+                      }}
                     >
                       Login
                     </Link>
@@ -127,6 +134,9 @@ const Category = () => {
                     <Link
                       className="py-4 block px-s50 bg-white text-primaryColor font-Bold hover:text-white hover:bg-primaryColor duration-300 border-t border-solid border-cartBgColor"
                       to="/signup"
+                      onClick={() => {
+                        return handelClick("Sing Up")
+                      }}
                     >
                       Sign Up
                     </Link>

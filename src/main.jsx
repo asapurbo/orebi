@@ -16,6 +16,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import JournalPage from "./pages/JournalPage.jsx";
 
 
 
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/contacts",
         element: <ContactsPage />,
+      },
+      {
+        path: "/journal",
+        element: <JournalPage />,
       },
       {
         path: "/:id",

@@ -1,10 +1,12 @@
-import React from "react";
 import Logo from "../icons/Logo";
-
 import Container from "../Container";
 import Flex from "../Flex";
 import List from "../List";
+import HeaderData from "../data/HeaderData";
+
 const Header = () => {
+  const { HeadDataList: data } = HeaderData();
+
   return (
     <nav className="py-8">
       <Container>
@@ -14,11 +16,14 @@ const Header = () => {
           </div>
           <div className="w-[95%]">
             <ul className="flex justify-center gap-x-10">
-                <List text="Home" target="_blank" href="/" />
-                <List text="Shop" target="_blank" href="/shop" />
-                <List text="About" target="_blank" href="/about" />
-                <List text="Contacts" target="_blank" href="/contacts" />
-                <List text="Journal" target="_blank" href="/journal" />
+              {data.map((item, index) => (
+                <List
+                  key={index}
+                  text={item.text}
+                  href={item.href}
+                  handelClick={item.handelClick}
+                />
+              ))}
             </ul>
           </div>
         </Flex>

@@ -10,13 +10,16 @@ import PriceList from "./PriceList";
 import GridBar from "./GridBar";
 import ShopProductCard from "./ShopProductCard";
 import PageButton from "./PageButton";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import HeaderData from "../data/HeaderData";
 
 const Shop = () => {
   const gridOneRef = useRef(null);
   const gridTwoRef = useRef(null);
   const shopOneRef = useRef(null);
   const cardRef = useRef(null);
-  
+
   useEffect(() => {
     const handelClick = () => {
       shopOneRef.current.classList.add("flex-col");
@@ -34,8 +37,19 @@ const Shop = () => {
     gridOneRef.current.addEventListener("click", handelClick);
   }, []);
 
-  const bread = window.location.pathname.replace("/", "");
+  // --------------------------------------------------
 
+  const bread = window.location.pathname.replace("/", "");
+  const data = useSelector((state) => state.bread.currentName);
+
+  let link = data.toLowerCase();
+  if (link === "home") {
+    link = link.replace("home", "");
+  } else if(link === "sing up") {
+    link = link.replace("sing up", "signup")
+  }
+  const {haendleDispatch:dataHandel} = HeaderData()
+  // ----------------------------------------
   return (
     <section className="pt-p124 pb-140">
       <Container>
@@ -46,7 +60,9 @@ const Shop = () => {
             className="text-primaryColor font-DM text-49 font-bold"
           />
           <Flex className="items-center capitalize text-SnColor font-DM text-xs font-normal gap-x-2 pt-3">
-            <Heading text="Home" as="h4" />
+            <Link onClick={() => {
+              return dataHandel(data)
+            }} to={`/${link}`}>{data}</Link>
             <FaAngleRight />
             <Heading text={bread} as="h4" />
           </Flex>

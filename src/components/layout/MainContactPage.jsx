@@ -6,9 +6,21 @@ import Label from "../Label";
 import SignUpHeading from "../SignUpHeading";
 import Button from "../Button";
 import LocetionCard from "./LocetionCard";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import HeaderData from "../data/HeaderData";
 
 const MainContactPage = () => {
   const bread = window.location.pathname.replace("/", "");
+  const data = useSelector((state) => state.bread.currentName);
+
+  let link = data.toLowerCase();
+  if (link === "home") {
+    link = link.replace("home", "");
+  } else if(link === "sing up") {
+    link = link.replace("sing up", "signup")
+  }
+  const {haendleDispatch:handleData} = HeaderData()
   return (
     <section className="pt-p124 pb-140">
       <Container>
@@ -19,7 +31,9 @@ const MainContactPage = () => {
             className="text-primaryColor font-DM text-49 font-bold"
           />
           <Flex className="items-center capitalize text-SnColor font-DM text-xs font-normal gap-x-2 pt-3">
-            <Heading text="Home" as="h4" />
+          <Link onClick={() => {
+              handleData(data)
+            }} to={`/${link}`}>{data}</Link>
             <FaAngleRight />
             <Heading text={bread} as="h4" />
           </Flex>

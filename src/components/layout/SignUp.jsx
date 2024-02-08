@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../Container";
 import Button from "../Button";
 import Heading from "../Heading";
@@ -8,8 +7,22 @@ import Paragraph from "../Paragraph";
 import PersonalDetails from "../PersonalDetails";
 import NewCustomer from "../NewCustomer";
 import Password from "../Password";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import HeaderData from "../data/HeaderData";
 
 const SignUp = () => {
+  const data = useSelector((state) => state.bread.currentName);
+
+  let link = data.toLowerCase();
+  if (link === "home") {
+    link = link.replace("home", "");
+  } else if(link === "sing up") {
+    link = link.replace("sing up", "signup")
+  }
+  const breadcrumbs = window.location.pathname.replace("/" , "");
+  const {haendleDispatch: handleData} = HeaderData()
+
   return (
     <section className="pt-p124 pb-140">
       <Container>
@@ -20,9 +33,11 @@ const SignUp = () => {
             className="text-primaryColor font-DM text-49 font-bold"
           />
           <Flex className="items-center text-SnColor font-DM text-xs font-normal gap-x-2 pt-3 pb-32">
-            <Heading text="Home" as="h4" />
+            <Link onClick={() => {
+              return handleData(data)
+            }} to={`/${link}`}>{data}</Link>
             <FaAngleRight />
-            <Heading text="Sign up" as="h4" />
+            <Heading text={breadcrumbs} as="h4" className='capitalize' />
           </Flex>
           <div className="w-644">
             <Paragraph
