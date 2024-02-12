@@ -3,34 +3,29 @@ import Flex from "../Flex";
 import List from "../List";
 import Bar from "../icons/Bar";
 import Paragraph from "../Paragraph";
-import Heading from "../Heading";
-import Image from "../Image";
-import cardimgx from "../../assets/cardimgx.png";
-import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
-import { FaXmark } from "react-icons/fa6";
+import { FaSearch, FaUser, FaCaretDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { decrement } from "../Slice/counterSlice";
 import useClick from "../hook/useClick";
 import HeaderData from "../data/HeaderData";
-
+import AddToCard from "./AddToCard";
+import { useSelector } from "react-redux";
 
 const Category = () => {
-  const {handelClick: handleClick, commonOneRef: dropRef, commonTwoRef: btnRef  } = useClick()
+  const {
+    handelClick: handleClick,
+    commonOneRef: dropRef,
+    commonTwoRef: btnRef,
+  } = useClick();
 
-  const {handelClick: handleClickTwo, commonOneRef: dropRefOne, commonTwoRef: btnRefOne  } = useClick()
+  const {
+    handelClick: handleClickTwo,
+    commonOneRef: dropRefOne,
+    commonTwoRef: btnRefOne,
+  } = useClick();
 
-  const {handelClick: handleClickThree, commonOneRef: dropRefTwo, commonTwoRef: btnRefTwo  } = useClick()
+  let { haendleDispatch: handelClick } = HeaderData();
 
-  // redux code 
-   let counter = useSelector((state) => {
-    return state.count.value
-   })
-   let dispatch = useDispatch()
-  // redux code 
-
-  let {haendleDispatch: handelClick} = HeaderData()
-
+  const data = useSelector((state) => state.addToCadeData.data);
 
   return (
     <section className="py-10 bg-categoryBgColor border-t border-b border-solid border-borderColor">
@@ -125,7 +120,7 @@ const Category = () => {
                       className="py-4 block px-s50 bg-white text-primaryColor font-Bold hover:text-white hover:bg-primaryColor duration-300"
                       to="/login"
                       onClick={() => {
-                        return handelClick("Login")
+                        return handelClick("Login");
                       }}
                     >
                       Login
@@ -135,7 +130,7 @@ const Category = () => {
                       className="py-4 block px-s50 bg-white text-primaryColor font-Bold hover:text-white hover:bg-primaryColor duration-300 border-t border-solid border-cartBgColor"
                       to="/signup"
                       onClick={() => {
-                        return handelClick("Sing Up")
+                        return handelClick("Sing Up");
                       }}
                     >
                       Sign Up
@@ -143,76 +138,11 @@ const Category = () => {
                   </div>
                 </div>
               </div>
+              {/* ----------------------------- */}
 
-              <div className="relative">
-                <div
-                  onClick={() => {
-                    handleClickThree();
-                  }}
-                  ref={btnRefTwo}
-                  className="flex relative"
-                >
-                  <div className="absolute -top-4 -right-4 flex items-center justify-center w-5 h-5 rounded-full bg-primaryColor">
-                    <p className="  text-white font-DM text-xs font-bold">{counter}</p>
-                  </div>
-                  <FaShoppingCart className="cursor-pointer" />
-                </div>
+              <AddToCard />
 
-                <div
-                  className="absolute hidden w-360 bg-white border border-solid border-cartBgColor right-0 top-8"
-                  ref={dropRefTwo}
-                >
-                  <div className="p-5 bg-categoryBgColor">
-                    <Flex className="items-center justify-between">
-                      <Flex className="items-center">
-                        <Image src={cardimgx} />
-
-                        <div className="ml-5">
-                          <Heading
-                            text="Black Smart Watch"
-                            as="h3"
-                            className="text-primaryColor font-DM text-sm font-bold"
-                          />
-                          <Paragraph
-                            text="$44.00"
-                            className="text-primaryColor font-DM text-sm font-Bold pt-3"
-                          />
-                        </div>
-                      </Flex>
-                      <span
-                        className="w-12 h-12 hover:bg-white cursor-pointer duration-300 flex justify-center items-center rounded-full"
-                        onClick={() => {dispatch(decrement())}}
-                      >
-                        <FaXmark />
-                      </span>
-                    </Flex>
-                  </div>
-
-                  <div className="p-5">
-                    <Flex className="items-center gap-x-1">
-                      <Paragraph
-                        text="Subtotal:"
-                        className="text-secondaryColor font-DM text-base font-normal"
-                      />
-                      <Heading
-                        text="$44.00"
-                        as="h3"
-                        className="text-primaryColor font-DM text-base font-bold"
-                      />
-                    </Flex>
-
-                    <Flex className="gap-x-5 mt-3">
-                      <button className="bg-white text-primaryColor font-DM text-sm font-bold  border border-solid border-userBgColor hover:bg-primaryColor duration-300 hover:text-white py-4 px-10">
-                        View Cart
-                      </button>
-
-                      <button className="bg-white text-primaryColor font-DM text-sm font-bold  border border-solid border-userBgColor hover:bg-primaryColor duration-300 hover:text-white py-4 px-10">
-                        Checkout
-                      </button>
-                    </Flex>
-                  </div>
-                </div>
-              </div>
+              {/* ----------------------------- */}
             </Flex>
           </div>
         </Flex>

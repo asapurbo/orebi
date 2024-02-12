@@ -1,4 +1,3 @@
-import { forwardRef } from "react";
 import Flex from "./Flex";
 import Heading from "./Heading";
 import Image from "./Image";
@@ -7,7 +6,8 @@ import { FaHeart } from "react-icons/fa";
 import { FaArrowsRotate, FaCartShopping } from "react-icons/fa6";
 import Button from "./Button";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { addToCard } from "./Slice/CardSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { increment } from "./Slice/counterSlice";
 
 const Card = ({
@@ -20,11 +20,35 @@ const Card = ({
   hrefCart,
   btn,
   refFour,
+  itemInfo,
 }) => {
+  // redux code
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.addToCadeData.data);
+ 
+  // redux code
 
-  // redux code 
-    let dispatch = useDispatch()
-  // redux code 
+  const handleClick = () => {
+    if (data.find((x) => x.bmtxt === itemInfo.bmtxt)) {
+      let returnArr = data.map((y) => {
+        if (y.bmtxt === itemInfo.bmtxt) {
+          return {
+            ...y,
+            count: y.count + 1,
+          };
+        }
+        return y;
+      });
+      dispatch(addToCard(returnArr));
+    } else {
+      dispatch(
+        addToCard({
+          ...itemInfo,
+          count: 1,
+        })
+      );
+    }
+  };
   return (
     <div ref={refFour} className={`w-370`}>
       <div className={`w-full relative group`}>
@@ -56,17 +80,24 @@ const Card = ({
           </Link>
 
           <Link to={hrefCart}>
-           <div onClick={() => dispatch(increment())}>
-            <Flex className="items-center gap-x-[15px] py-4 pr-6 justify-end hover:bg-slate-200">
-              <Heading
-                text="Add to Cart"
-                as="h4"
-                className="text-primaryColor font-DM text-base font-bold"
-              />
-              <FaCartShopping />
-            </Flex>
-           </div>
-            
+            <div
+              onClick={() => {
+                return handleClick();
+              }}
+            >
+              <div onClick={() => {
+                dispatch(increment())
+              }}>
+                <Flex className="items-center gap-x-[15px] py-4 pr-6 justify-end hover:bg-slate-200">
+                  <Heading
+                    text="Add to Cart"
+                    as="h4"
+                    className="text-primaryColor font-DM text-base font-bold"
+                  />
+                  <FaCartShopping />
+                </Flex>
+              </div>
+            </div>
           </Link>
         </div>
       </div>
@@ -85,6 +116,4 @@ const Card = ({
   );
 };
 
-const forWardCard = forwardRef(Card);
-
-export default forWardCard;
+export default Card;

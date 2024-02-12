@@ -12,7 +12,6 @@ const CategoryList = () => {
     iconRef.current.classList.toggle("rotate-180");
     categoryRef.current.classList.toggle("h-w437");
     categoryRef.current.classList.toggle("left-s0");
-    categoryRef.current.classList.replace("overflow-hidden", "overflow-y-auto");
   };
 
   return (

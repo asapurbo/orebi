@@ -18,7 +18,7 @@ const useClick = () => {
       (commonOneRef.current.style.display =
         "block" &&
         !commonTwoRef.current.contains(event.target) &&
-        !commonOneRef.current.contains(event.target))
+        !commonOneRef.current.contains(event.target)) 
     ) {
       commonOneRef.current.style.display = "none";
     }
