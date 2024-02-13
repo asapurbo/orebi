@@ -25,8 +25,6 @@ const Category = () => {
 
   let { haendleDispatch: handelClick } = HeaderData();
 
-  const data = useSelector((state) => state.addToCadeData.data);
-
   return (
     <section className="py-10 bg-categoryBgColor border-t border-b border-solid border-borderColor">
       <Container>

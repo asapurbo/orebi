@@ -53,7 +53,7 @@ const AddToCard = () => {
   };
   // ---------------------------------- Cancel Item Start ------------------------------
   return (
-    <div className="relative">
+    <div className="relative z-50">
     
       {/* ---------------- */}
       <div
