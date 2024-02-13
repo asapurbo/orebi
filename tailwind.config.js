@@ -38,13 +38,13 @@ export default {
       // Spacing Start
       spacing: {
         140: "140px",
+        s310: "310px",
         780: "780px",
         370: "370px",
         118: "118px",
         y6: "6px",
         540: "540px",
         120: "120px",
-        140: "140px",
         170: "170px",
         921: "921px",
         360: "360px",
@@ -77,7 +77,11 @@ export default {
         s354: "354px",
         s0 : "0px !important",
         auto: 'auto !important',
-        ws70: '70% !important'
+        ws70: '70% !important',
+        s100: '100px ',
+        s410: '410px ',
+        s270: '270px ',
+        s375: '375px ',
 
       },
       // Spacing End

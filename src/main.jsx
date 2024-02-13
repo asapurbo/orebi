@@ -8,6 +8,7 @@ import ShopPage from "./pages/ShopPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactsPage from "./pages/ContactsPage.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
+import CartPage from "./pages/CartPage.jsx";
 
 import store from "../src/components/store.js";
 import { Provider } from "react-redux";
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/:id",
         element: <ErrorPage />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
       },
     ],
   },

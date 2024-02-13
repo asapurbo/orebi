@@ -127,7 +127,7 @@ const Category = () => {
                     </Link>
 
                     <Link
-                      className="py-4 block px-s50 bg-white text-primaryColor font-Bold hover:text-white hover:bg-primaryColor duration-300 border-t border-solid border-cartBgColor"
+                      className="py-4 block px-s50 bg-white text-primaryColor font-Bold font-DM hover:text-white hover:bg-primaryColor duration-300 border-t border-solid border-cartBgColor"
                       to="/signup"
                       onClick={() => {
                         return handelClick("Sing Up");

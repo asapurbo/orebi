@@ -8,6 +8,7 @@ import Paragraph from "../Paragraph";
 import { addToCard } from "../Slice/CardSlice";
 import { decrement } from "../Slice/counterSlice";
 import AddToCardLogoPart from "../AddToCardLogoPart";
+import { Link } from "react-router-dom";
 
 const AddToCard = () => {
   const {
@@ -131,13 +132,13 @@ const AddToCard = () => {
             </Flex>
 
             <Flex className="gap-x-5 mt-3">
-              <button className="bg-white text-primaryColor font-DM text-sm font-bold  border border-solid border-userBgColor hover:bg-primaryColor duration-300 hover:text-white py-4 px-10">
+              <Link to='/cart' className="bg-white text-primaryColor font-DM text-sm font-bold  border border-solid border-userBgColor hover:bg-primaryColor duration-300 hover:text-white py-4 px-10">
                 View Cart
-              </button>
+              </Link>
 
-              <button className="bg-white text-primaryColor font-DM text-sm font-bold  border border-solid border-userBgColor hover:bg-primaryColor duration-300 hover:text-white py-4 px-10">
+              <Link className="bg-white text-primaryColor font-DM text-sm font-bold  border border-solid border-userBgColor hover:bg-primaryColor duration-300 hover:text-white py-4 px-10">
                 Checkout
-              </button>
+              </Link>
             </Flex>
           </div>
         </div>
