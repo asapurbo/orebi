@@ -25,6 +25,7 @@ const AddToCard = () => {
   let d = data.map((item) => {
     return parseFloat(item.price.replace("$", "") * item.count);
   });
+
   let subtotal = d.reduce((sum, item) => {
     return (sum += item);
   }, 0);

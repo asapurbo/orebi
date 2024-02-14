@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import useClick from "../hook/useClick";
 import HeaderData from "../data/HeaderData";
 import AddToCard from "./AddToCard";
-import { useSelector } from "react-redux";
 
 const Category = () => {
   const {
