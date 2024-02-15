@@ -82,6 +82,7 @@ export default {
         s410: '410px ',
         s270: '270px ',
         s375: '375px ',
+        s1057: '1057px',
 
       },
       // Spacing End

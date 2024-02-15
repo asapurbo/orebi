@@ -7,6 +7,7 @@ import SpecialOffersData from "../data/SpecialOffersData";
 
 const SpecialOffers = () => {
   const {specialOfferData: specialOfferData} = SpecialOffersData();
+
   
   return (
     <section className="pb-36">

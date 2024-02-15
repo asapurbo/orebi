@@ -137,7 +137,7 @@ const AddToCard = () => {
                 View Cart
               </Link>
 
-              <Link className="bg-white text-primaryColor font-DM text-sm font-bold  border border-solid border-userBgColor hover:bg-primaryColor duration-300 hover:text-white py-4 px-10">
+              <Link to='/checkout' className="bg-white text-primaryColor font-DM text-sm font-bold  border border-solid border-userBgColor hover:bg-primaryColor duration-300 hover:text-white py-4 px-10">
                 Checkout
               </Link>
             </Flex>

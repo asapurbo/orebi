@@ -13,6 +13,8 @@ import PageButton from "./PageButton";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import HeaderData from "../data/HeaderData";
+import CardTwo from "../CardTwo";
+import ShopProductCardTwo from "./ShopProductCardTwo";
 
 const Shop = () => {
   const gridOneRef = useRef(null);
@@ -78,7 +80,9 @@ const Shop = () => {
 
           <div className="w-full">
             <GridBar refOne={gridOneRef} refTwo={gridTwoRef} />
-            <ShopProductCard refThree={shopOneRef} />
+            {/* <ShopProductCard refThree={shopOneRef} /> */}
+            {/* <CardTwo/> */}
+            
             <PageButton />
           </div>
         </Flex>

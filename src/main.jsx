@@ -18,6 +18,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import JournalPage from "./pages/JournalPage.jsx";
+import CheckoutPage from "./pages/CheckoutPage.jsx";
 
 
 
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <CartPage />,
+      },
+      {
+        path: "/checkout",
+        element: <CheckoutPage />,
       },
     ],
   },

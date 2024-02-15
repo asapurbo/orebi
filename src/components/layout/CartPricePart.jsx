@@ -89,7 +89,7 @@ const CartPricePart = () => {
         </Flex>
         <div className="">
           <Link
-            to=""
+            to="/checkout"
             className="py-5 px-8 bg-primaryColor font-DM text-sm text-white font-bold inline-block mt-8"
           >
             Proceed to Checkout

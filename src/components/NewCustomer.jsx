@@ -63,8 +63,8 @@ const NewCustomer = () => {
           <div className="relative">
             <select className="focus:outline-transparent w-full pb-4 border-b border-solid border-convBorderColor text-secondaryColor font-DM text-sm appearance-none font-normal">
               <option>Please select</option>
-              {all.map((item) => (
-                <option>{item.name.common}</option>
+              {all.map((item,index) => (
+                <option key={index}>{item.name.common}</option>
               ))}
             </select>
             <div className="absolute right-0 bottom-0 h-full flex justify-center items-center">
