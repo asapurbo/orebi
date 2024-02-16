@@ -2,8 +2,8 @@ import Container from "../Container";
 import Heading from "../Heading";
 
 import Card from "../Card";
-import Flex from "../Flex";
 import SpecialOffersData from "../data/SpecialOffersData";
+import MainSlider from "../MainSlider";
 
 const SpecialOffers = () => {
   const {specialOfferData: specialOfferData} = SpecialOffersData();
@@ -17,7 +17,7 @@ const SpecialOffers = () => {
           as="h3"
           className="text-primaryColor font-DM text-39 font-bold  pb-12"
         />
-        <Flex className="justify-between">
+        <MainSlider className="justify-between">
           {
             specialOfferData.map((item,index) => (
               <Card
@@ -34,7 +34,7 @@ const SpecialOffers = () => {
             />
             ))
           }
-        </Flex>
+        </MainSlider>
       </Container>
     </section>
   );

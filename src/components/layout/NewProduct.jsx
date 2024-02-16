@@ -2,7 +2,7 @@ import Container from "../Container";
 import Heading from "../Heading";
 
 import Card from "../Card";
-import Flex from "../Flex";
+import MainSlider from "../MainSlider";
 import NewProductData from "../data/NewProductData";
 
 const NewProduct = () => {
@@ -16,7 +16,7 @@ const NewProduct = () => {
           as="h3"
           className="text-primaryColor font-DM text-39 font-bold  pb-12"
         />
-        <Flex className="gap-x-10">
+        <MainSlider className="justify-between">
           {newproductData.map((item, index) => (
             <Card
               key={index}
@@ -30,7 +30,7 @@ const NewProduct = () => {
               itemInfo={item}
             />
           ))}
-        </Flex>
+        </MainSlider>
       </Container>
     </section>
   );

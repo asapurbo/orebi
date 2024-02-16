@@ -2,7 +2,7 @@ import Container from "../Container";
 import Heading from "../Heading";
 import BestsellersProductData from "../data/BestsellersProductData";
 import Card from "../Card";
-import Flex from "../Flex";
+import MainSlider from "../MainSlider";
 
 const BestsellersProduct = () => {
   const { bestsellersdata: bestsellersdata } = BestsellersProductData();
@@ -15,7 +15,7 @@ const BestsellersProduct = () => {
           as="h3"
           className="text-primaryColor font-DM text-39 font-bold  pb-12"
         />
-        <Flex className="justify-between">
+        <MainSlider className="justify-between">
           {bestsellersdata.map((item, index) => (
             <Card
               key={index}
@@ -30,7 +30,7 @@ const BestsellersProduct = () => {
               itemInfo={item}
             />
           ))}
-        </Flex>
+        </MainSlider>
       </Container>
     </section>
   );

@@ -10,15 +10,13 @@ import ShopProductCard from "./ShopProductCard";
 const GridBar = ({ refOne, refTwo }) => {
   const [gridOne, setGridOne] = useState(false);
   const [gridTwo, setGridTwo] = useState(true);
-  const [size, setSize] = useState()
+  const [size, setSize] = useState();
   const arr = [12, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 13, 14];
 
   const handleSize = (e) => {
-    const currentSize = parseInt(e)
-    setSize(currentSize)
+    const currentSize = parseInt(e);
+    setSize(currentSize);
   };
-
-
   return (
     <div>
       <Flex className="justify-between">
@@ -30,7 +28,11 @@ const GridBar = ({ refOne, refTwo }) => {
                 return setGridTwo(true), setGridOne(false);
               }}
             >
-              <Grid1 className="cursor-pointer" />
+              <Grid1
+                className="cursor-pointer border border-solid group duration-300 border-cartBgColor"
+                rectClass="fill-white group-hover:fill-primaryColor duration-300"
+                pathClass="fill-[#737373] group-hover:fill-white duration-300"
+              />
             </div>
             <div
               ref={refTwo}
@@ -38,7 +40,10 @@ const GridBar = ({ refOne, refTwo }) => {
                 return setGridOne(true), setGridTwo(false);
               }}
             >
-              <Grid2 className="cursor-pointer" />
+              <Grid2  className="cursor-pointer  group duration-300 "
+                rectClass="fill-white group-hover:fill-primaryColor duration-300"
+                pathClass="fill-[#737373] group-hover:fill-white duration-300"
+            />
             </div>
           </Flex>
         </div>
